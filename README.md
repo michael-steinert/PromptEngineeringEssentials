@@ -57,6 +57,11 @@
 
 - Zero-shot Prompting is a Technique where a Practitioner presents a Task to an LLM without giving the Model further Examples. Here, the Practitioner expects the model to perform the Task without a prior Understanding, or Shot, of the Task.
 - Modern LLMs demonstrate remarkable Zero-shot Performance.
+- Example Prompt:
+
+```
+Explain the importance of biodiversity in ecosystems.
+```
 
 ##### Tips for Zero-Shot Prompting
 
@@ -67,6 +72,13 @@
 
 - Few-shot Prompting is a Technique where the Practitioner give the Model contextual Information about the requested Tasks. In this Technique, Examples of both the Task and the Output are provided.
 - Providing this Context, or a Few Shots, in the Prompt conditions the Model to follow the Task guidance closely.
+- Example Prompt:
+
+```
+Translate the following sentences into French:
+1. The cat is on the roof.
+2. The weather is sunny today.
+```
 
 ##### Tips for Few-Shot Prompting
 
@@ -78,6 +90,11 @@
 - Chain-of-Thought (CoT) Prompting breaks down complex Reasoning Tasks through intermediary Reasoning Steps.
 - Practitioners can use both Zero-shot and Few-shot Prompting Techniques with CoT Prompts.
 - Practitioners can use the Phrase "Think Step by Step" to invoke CoT Reasoning from the Model.
+- Example Prompt:
+
+```
+To solve the math problem 24 divided by 6, think step by step.
+```
 
 ##### Tip for Chain-of-Thought Prompting
 
@@ -88,6 +105,11 @@
 - Self-consistency is a Prompting Technique similar to CoT Prompting. However, instead of taking the obvious Step-by-Step or Greedy Path, Self-Consistency Prompts the Model to sample a variety of Reasoning Paths. Then, the Model aggregates the final Answer based on multiple Data Points from the various Paths.
 - Self-consistency improves CoT Reasoning Prompting when used in a Range of common arithmetic and common-sense Reasoning Benchmarks.
 - Using the Self-consistency Technique, the Model can separate the appropriate Data Points and then aggregate them into the correct Answer.
+- Example Prompt:
+
+```
+Solve the math problem 12 times 15 using different methods and find the most consistent answer.
+```
 
 #### Tree of Thoughts
 
@@ -96,6 +118,11 @@
 - ToT Prompting is an especially effective Method for Tasks that involve important initial Decisions, Strategies for the Future, and Exploration of multiple Solutions.
 - Most LLMs make Decisions by following a standard Left-to-Right Token-Level Inference, but with ToT, LLMs can self-evaluate Choices.
 - ToT significantly improves Performance on Tasks that require nontrivial Planning.
+- Example Prompt:
+
+```
+Outline a business plan for a new tech startup considering multiple strategies and choose the best approach.
+```
 
 #### Retrieval Augmented Generation
 
@@ -104,6 +131,11 @@
 - RAG will not change the Weights of the FM whereas Fine-tuning will. This Approach can be more cost-efficient than regular Fine-tuning because the RAG approach does not incur the Cost of fine-tuning a Model.
 - RAG also addresses the Challenge of frequent Data Changes because it retrieves updated and relevant Information instead of relying on potentially outdated Sets of Data.
 - In RAG, the external Data can come from multiple Data Sources, such as a Document Repository, Databases, or APIs, but before it can be used within LLMs, the Data must be prepared and kept currrent.
+- Example Prompt:
+
+```
+Using the latest research papers on climate change, explain the impact of global warming on polar ice caps.
+```
 
 #### Automatic Reasoning and Tool-Use
 
@@ -111,12 +143,22 @@
 - ART is used specifically for multi-step Reasoning Tasks. This Technique essentially deconstructs complex Tasks by having the Model select Demonstrations of multiple, or few-shot, Examples from the Task Öibrary. At the same Time, the Model is using this Few-shot Breakdown, it uses predefined external Tools such as Search and Code Generation to carry out the Task.
 - ART performs substantially better than Few-shot Prompting and automatic CoT for unseen Tasks and matches the Performance of handcrafted CoT Prompts on a majority of Tasks.
 - ART also makes it more efficient for Humans to update Information in the Task Libraries, which can correct Errors and ultimately improve Performance.
+- Example Prompt:
+
+```
+Using a database of economic indicators and code generation tools, analyze the economic impact of a new tax policy.
+```
 
 #### ReAct Prompting
 
 - With ReAct Prompting, an LLM can combine Reasoning and Action. Models are often used for Reasoning or for Acting, but they are not always effectively used for both at the same Time.
 - CoT Prompting shows Promise for an LLM to reason and generate Actions for straightforward Tasks, like Mathematics. However, the Inability to update Information or access external Contexts with CoT Prompting can lead to Errors in the Output, such as Fact Hallucination.
 - With a ReAct Framework, LLMs can generate both Reasoning Traces and Task-specific Actions that are based on external Tools, such as Wikipedia Pages or SQL Databases. This external Context leads to more accurate and reliable Output.
+- Example Prompt:
+
+```
+Research the latest advancements in AI, summarize key points, and generate an action plan for integrating these advancements into our company.
+```
 
 ## Generative AI and Foundation Models
 
