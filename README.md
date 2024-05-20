@@ -233,7 +233,7 @@ Please translate the following text from English to French, ensuring that any pr
 - If there are not have sufficient Data when Training a Model, that Lack of Data can create Bias. Insufficient Data leads to low Confidence in the Model, and most Toxicity Filters and Ranking Algorithms inherently prefer confidence in Models. This leads to presumed Exclusion for many groups, thus perpetuating Bias.
 
 <p align="center">
-  <img src="images/mitigating_bias.png" alt="Mitigating Bias" width="25%"/>
+  <img src="images/mitigating_bias.png" alt="Mitigating Bias" width="45%"/>
 </P>
 
 - The following three Techniques can help mitigate Bias in Foundation Models:
@@ -269,7 +269,7 @@ Describe the role of a software developer without assuming gender.
 - The Size and general-purpose Nature of Foundation Models make them different from traditional ML Models. Foundation Models use Deep Neural Networks to emulate Human Brain Functionality and handle complex Tasks. Foundation Models can be adapted for a broad Range of general Tasks, such as Text Generation, Text Summarization, Information Extraction, Image Generation, Chatbot, and Question Answering. Foundation Models can also serve as the Starting Point for developing more specialized Models.
 
 <p align="center">
-  <img src="images/understanding_fm.png" alt="Understanding FM" width="40%"/>
+  <img src="images/understanding_fm.png" alt="Understanding FM" width="65%"/>
 </P>
 
 ### Self-Supervised Learning
