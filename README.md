@@ -140,7 +140,7 @@ Using the latest research papers on climate change, explain the impact of global
 #### Automatic Reasoning and Tool-Use
 
 - Like the Self-consistency and ToT Prompt Techniques, ART is a Prompting Technique that builds on the CoT Process.
-- ART is used specifically for multi-step Reasoning Tasks. This Technique essentially deconstructs complex Tasks by having the Model select Demonstrations of multiple, or few-shot, Examples from the Task Öibrary. At the same Time, the Model is using this Few-shot Breakdown, it uses predefined external Tools such as Search and Code Generation to carry out the Task.
+- ART is used specifically for multi-step Reasoning Tasks. This Technique essentially deconstructs complex Tasks by having the Model select Demonstrations of multiple, or few-shot, Examples from the Task Library. At the same Time, the Model is using this Few-shot Breakdown, it uses predefined external Tools such as Search and Code Generation to carry out the Task.
 - ART performs substantially better than Few-shot Prompting and automatic CoT for unseen Tasks and matches the Performance of handcrafted CoT Prompts on a majority of Tasks.
 - ART also makes it more efficient for Humans to update Information in the Task Libraries, which can correct Errors and ultimately improve Performance.
 - Example Prompt:
@@ -166,12 +166,110 @@ Research the latest advancements in AI, summarize key points, and generate an ac
 - Like all other AI, generative AI is powered by Machine Learning (ML) Models
 - Generative AI is powered by very large Models, commonly called Foundation Models. Foundation Models are pre-trained on a vast Corpus of Data, usually through self-supervised Learning.
 
+### Concepts for LLM Parameters
+
+- When interacting with LLMs through an API or directly, the Practitioners can configure Prompt Parameters to get customized Results.
+- Generally, the Practitioners should only adjust one Parameter at a Time, and Results can vary depending on the LLM.
+- The following parameters can be used to modify the output from the LLMs. Not all parameters are available with all LLMs.
+
+#### Determinism Parameters
+
+- **Temperature**: Controls Randomness. Lower Values focus on probable Tokens, and higher Values add Randomness and Diversity. Use lower Values for factual Responses and higher Values for creative Responses.
+- **Top_p**: Adjusts Determinism with "nucleus sampling". Lower Values give exact Answers, while higher Values give diverse Responses. This Value controls the Diversity of the Model's Responses.
+- **Top_k**: The Number of the highest-probability Vocabulary Tokens to keep for Top-k-Filtering. Similar to the _Top_p_ Parameter, _Top_k_ defines the Cutoff where the Model no longer selects the Words.
+
+#### Token Count
+
+- **MinTokens**: The minimum Number of Tokens to generate for each Response.
+- **MaxTokenCount**: The maximum Number of Tokens to generate before Stopping.
+
+#### Stop Sequences
+
+- **StopSequences**: A List of Strings that will cause the Model to stop generating.
+
+#### Number of Results
+
+- **numResults**: The Number of Responses to generate for a given Prompt.
+
+#### Penalties
+
+- **FrequencyPenalty**: A Penalty applied to Tokens that are frequently generated.
+- **PresencePenalty**: A Penalty applied to Tokens that are already present in the Prompt.
+- **CountPenalty**: A Penalty applied to Tokens based on their Frequency in the generated Responses.
+
+### Adversarial Prompts
+
+- Adversarial Prompts are Prompts that are designed to purposefully mislead Models and break the Integrity and Safety of AI Applications.
+- Types of adversarial Prompts are Prompt Injection and Prompt Leaking.
+
+#### Prompt Injection
+
+- Prompt Injection is a Technique for influencing the Outputs of Models by using specific Instructions in the Prompt.
+- For Example a Hacker might provide Prompts to a Text Generation Model containing harmful, unethical, or biased Content to generate similar Text. This can be used to create Fake News, Propaganda, or other malicious Content at Scale.
+- Non-Malicious Uses: Prompt Injection can also be used for legitimate Purposes, such as overriding the Responses from Models, customizing Translations to keep Product Names consistent, and more.
+- Preventing Prompt Injection: To avoid Prompt Injection, add Guardrails to the Prompt. Guardrails can include specific Instructions that prevent the Model from generating harmful or unethical Content.
+- Example Prompt with Guardrails:
+
+```
+Please translate the following text from English to French, ensuring that any product names remain unchanged and avoid including any harmful or inappropriate language in the translation.
+```
+
+#### Prompt Leaking
+
+- Prompt Leaking refers to the Risk that a Model might unintentionally disclose sensitive or private Information through the Prompts or Examples it generates.
+- For Exmaple if a Model is trained on private Customer Data to generate Product Recommendations, it might leak details about Customers' Purchases or Browsing History in the Recommendations it generates for new Customers. This could violate Customers' Privacy and Trust in the Model.
+- To avoid Prompt Leaking, Models often have built-in Mechanisms to prevent Prompt Leaking. It is always recommended to test thoroughly to ensure that specific Use Cases do not pose a Risk of exposing Private Information.
+  - Some Best Practices to avoid Prompt Leaking are:
+  - Regularly audit the Model's Outputs for unintended Disclosures.
+  - Implement strict Data Privacy Protocols during Training.
+  - Use anonymized or aggregated Data when possible.
+
+### Mitigating Bias in Models
+
+- The Data that Models are trained on might contain Biases. If Data contains Biases, the Model is likely to reproduce them. Ultimately, the Model might end up with Outputs that are biased or unfair.
+- Bias can appear in Prompt Engineering in the following two Ways:
+  - Biased Prompts: If the Prompts are built on Assumptions, the Prompts themselves may be biased. For Example, a Query that assumes all Software Developers are Men can cause the Model to produce biased Results towards Men.
+  - Biased Outputs from Neutral Prompts: Even if the Prompts are not written with Bias, Models can sometimes produce biased Results due to possible Biases in the Training Data. For Example, even when given a gender-neutral Prompt, the Model may provide Responses that assume Software Developers are Male if it has been trained on Data that primarily features Male Software Developers.
+- If there are not have sufficient Data when Training a Model, that Lack of Data can create Bias. Insufficient Data leads to low Confidence in the Model, and most Toxicity Filters and Ranking Algorithms inherently prefer confidence in Models. This leads to presumed Exclusion for many groups, thus perpetuating Bias.
+
+<p align="center">
+  <img src="images/mitigating_bias.png" alt="Mitigating Bias" width="25%"/>
+</P>
+
+- The following three Techniques can help mitigate Bias in Foundation Models:
+
+##### Update the Prompt
+
+- Providing explicit Guidance in Prompts can reduce inadvertent Performance at Scale. There are a few Methods for mitigating Bias in a Model's Output through Prompt updates:
+- **Text-to-Image Disambiguation (TIED) Framework**: This Method focuses on avoiding Ambiguity in Prompts by asking Clarifying Questions to understand the User's Intent and avoid Ambiguous, and possibly biased, Answers.
+- **Text-to-Image Ambiguity Benchmark (TAB)**: This Benchmark provides a Schema in the Prompt to ask Clarifying Questions, offering various Options and Questions for the Model to ask.
+- **Clarify Using Few-Shot Learning**: Have the Model generate Clarifying Questions using Few-shot Learning. By giving the Model Context and Examples of Questions that help clarify the Context, disambiguated Prompts can mitigate Bias in the Model's Output.
+- Example Prompt:
+
+```
+Describe the role of a software developer without assuming gender.
+```
+
+#### Enhance the Dataset
+
+- Enhancing the Training Dataset can help mitigate Bias by introducing more diverse Examples and different Types of Pronouns. For LLMs trained on Text, it is possible to use counterfactual Data Augmentation to artificially expand the Model's Training Set by using modified Data from the existing Dataset.
+- For LLMs trained on Images, it is also possible to use counterfactual Data Augmentation. The process to augment Images to introduce more Diversity consists of the following three Steps:
+  1. Detect: Use Image Classification to detect People, Objects, and Backgrounds in the Dataset. Compute Summary Statistics to detect Dataset Imbalances.
+  2. Segment: Use Segmentation to generate Pixel Maps of Objects to replace.
+  3. Augment: Use Image-to-Image Techniques to update the Images and equalize Distributions.
+
+#### Use Training Techniques
+
+- There are Techniques at the Training Level that can help mitigate Bias, such as using equalized Odds and Fairness Criteria as Model Objectives.
+  - **Equalized Odds to Measure Fairness**: Equalized Odds aim to equalize the Error a Model makes when predicting categorical Outcomes for different Groups. This involves matching True Positive Rate and False Positive Rate for different Groups.
+  - **Using Fairness Criteria as Model Objectives**: Model Training is usually optimized for Performance as the singular Objective. Combined Objectives could include other Metrics such as Fairness, Energy Efficiency, and Inference Time.
+
 ## Understanding FM Functionality
 
 - The Size and general-purpose Nature of Foundation Models make them different from traditional ML Models. Foundation Models use Deep Neural Networks to emulate Human Brain Functionality and handle complex Tasks. Foundation Models can be adapted for a broad Range of general Tasks, such as Text Generation, Text Summarization, Information Extraction, Image Generation, Chatbot, and Question Answering. Foundation Models can also serve as the Starting Point for developing more specialized Models.
 
 <p align="center">
-  <img src="images/understanding_fm.png" alt="Shared Responsibility" width="75%"/>
+  <img src="images/understanding_fm.png" alt="Understanding FM" width="40%"/>
 </P>
 
 ### Self-Supervised Learning
@@ -192,7 +290,6 @@ Research the latest advancements in AI, summarize key points, and generate an ac
 ### Categories of Foundation Models
 
 - Foundation Models can be categorized into multiple Types. Two of the most frequently used Models are _Text-to-Text Models_ and _Text-to-Image Models_.
--
 
 #### Text-to-Text Models
 
