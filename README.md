@@ -4,7 +4,7 @@
 
 - When interacting with a Foundation Model, a Prompt is the Input Practitioners provide to the Model to generate a Response or Output. Essentially, Prompts act as Instructions guiding the Model on what to perform.
 - The Quality and Structure of the Prompt significantly influence the Foundation Model's Performance on specific Tasks. This is where _Prompt Engineering_ plays a crucial Role.
-- _Prompt Engineering_ is a ciritcal Field that focused on optimizing the Design, Development, and Interaction with Language Models, especially large Models. Core Aspects of _Prompt Engineering_ incldue:
+- _Prompt Engineering_ is a critical Field that focused on optimizing the Design, Development, and Interaction with Language Models, especially large Models. Core Aspects of _Prompt Engineering_ include:
   - Enhancing the Capabilities of Language Models.
   - Addressing and mitigating their Limitations.
   - Gaining deeper Insights into how Models function.
@@ -23,7 +23,7 @@
 ### Benefits of Prompt Engineering
 
 - _Prompt Engineering_ is the fastest and most cost-effective Way to leverage Large Language Models (LLMs). By engaging with an LLM through well-crafted Questions, Statements, or Instructions, Practitioners can fine-tune Outputs to meet specific Needs.
-- Effective Prompt Techniques provice Businesses with several Benefits:
+- Effective Prompt Techniques provide Businesses with several Benefits:
   - **Boost a Model's Performance and Safety**: Techniques like RLHF enhance Model Output Quality and ensure Alignment with ethical Standards.
   - **Integrate Domain Knowledge and external Tools**: Augment the Model’s Performance without requiring Fine-tuning by incorporating additional Tools and external Data into Prompts.
 - **Harness the full Capabilities of Language Models**: Explore and utilize Models’ wide Range of Functionalities. RLHF refines Model Interactions, enabling better handling of complex or sensitive Prompts.
@@ -221,7 +221,7 @@ Please translate the following text from English to French, ensuring that any pr
 #### Prompt Leaking
 
 - Prompt Leaking refers to the Risk that a Model might unintentionally disclose sensitive or private Information through the Prompts or Examples it generates.
-- For Exmaple if a Model is trained on private Customer Data to generate Product Recommendations, it might leak details about Customers' Purchases or Browsing History in the Recommendations it generates for new Customers. This could violate Customers' Privacy and Trust in the Model.
+- For Example if a Model is trained on private Customer Data to generate Product Recommendations, it might leak details about Customers' Purchases or Browsing History in the Recommendations it generates for new Customers. This could violate Customers' Privacy and Trust in the Model.
 - To avoid Prompt Leaking, Models often have built-in Mechanisms to prevent Prompt Leaking. It is always recommended to test thoroughly to ensure that specific Use Cases do not pose a Risk of exposing Private Information.
   - Some Best Practices to avoid Prompt Leaking are:
   - Regularly audit the Model's Outputs for unintended Disclosures.
@@ -324,7 +324,7 @@ Describe the role of a software developer without assuming gender.
 
 - Diffusion is a deep-learning Architecture System that learns through a two-step Process.
   1. The first Step is called Forward Diffusion. Using Forward Diffusion, the System gradually introduces a small Amount of Noise to an Input Image until only the Noise is left over. There is a U-Net Model that tracks and predicts the Noise Level.
-  2. In the subsequent Reverse Diffusion Step, the noisy Image is gradually denoised until a new Image is generated. During the Training Process, the Model gets the Feed of Text, which is added to the Image Vector.
+  2. In the subsequent Reverse Diffusion Step, the noisy Image is gradually de-noised until a new Image is generated. During the Training Process, the Model gets the Feed of Text, which is added to the Image Vector.
 
 ## Large Language Models (LLMs)
 
@@ -352,8 +352,8 @@ Describe the role of a software developer without assuming gender.
 
 1. Text Preprocessing
 
-- **Tokenization**: The Process begins with breaking down the Text into Tokens, which can be Words, Subwords, or Characters, depending on the Model Architecture. This is a critical Step, as it defines how the Model will interpret and generate Text.
-- **Cleaning the Text**: The Text is cleaned by removing unnecessary Elements such as Stopwords, Punctuation, and other irrelevant Characters. Depending on the Model, this Step might also involve Lowercasing or Lemmatization, though more advanced Models may not require extensive Preprocessing.
+- **Tokenization**: The Process begins with breaking down the Text into Tokens, which can be Words, Sub-words, or Characters, depending on the Model Architecture. This is a critical Step, as it defines how the Model will interpret and generate Text.
+- **Cleaning the Text**: The Text is cleaned by removing unnecessary Elements such as Stop-words, Punctuation, and other irrelevant Characters. Depending on the Model, this Step might also involve Lowercasing or Lemmatization, though more advanced Models may not require extensive Preprocessing.
 
 2. Word Embedding Creation
 
@@ -368,7 +368,7 @@ Describe the role of a software developer without assuming gender.
 4. Advanced Techniques with Transformers
 
 - **Contextual-Based Embeddings**: Transformer Models, such as BERT and GPT, use contextual Embeddings, where the Representation of a Word changes based on its surrounding Context. This allows the Model to capture more nuanced Meanings and Relationships between Words.
-- **Pretraining and Fine-Tuning**: Transformers are often pretrained on large Corpora before being fine-tuned on specific Tasks. Fine-Tuning can involve traditional Methods or Reinforcement Learning from Human Feedback (RLHF) to align the Model more closely with Human Values.
+- **Pre-training and Fine-Tuning**: Transformers are often pre-trained on large Corpora before being fine-tuned on specific Tasks. Fine-Tuning can involve traditional Methods or Reinforcement Learning from Human Feedback (RLHF) to align the Model more closely with Human Values.
 
 5. Application to NLP Tasks
 
