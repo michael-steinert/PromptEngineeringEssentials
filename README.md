@@ -2,64 +2,68 @@
 
 ## Prompt Engineering
 
-- When interacting with a Foundation Model, a Prompt is the Input that the Practitioner provides to the Model to generate a Response or Output. In Essence, Prompts are Instructions for what the Practitioner want the Model to do.
-- The Quality and Structure of the Prompt can significantly influence the Foundation Model's Performance on a given Task. This is where _Prompt Engineering_ becomes crucial.
-- _Prompt Engineering_ is a new and essential Field focused on Optimizing the use, development, and understanding of Language Models, particularly large Models. At its Core, _Prompt Engineering_ involves designing Prompts and Interactions to:
-  - Expand the Capabilities of Language Technologies
-  - Address and mitigate their Weaknesses
-  - Gain deeper Insights into their Functioning
-- _Prompt Engineering_ equips Practitioners with Strategies and Techniques for pushing the Boundaries of what is possible with Language Models. It aims to:
-- **Designing Effective Prompts**: Crafting Prompts that clearly and accurately convey the Task to the Model.
-- **Optimizing Interactions**: Tweaking and refining Prompts to improve the Model's Performance on specific Tasks.
-- **Understanding Model Behavior**: Gaining Insights into how Models interpret and respond to different Prompts, which can inform further Development and Application of these Technologies.
-- **Aligning Model Outputs with Human Values**: Leveraging Techniques such as Reinforcement Learning from Human Feedback (RLHF) to ensure that Model Outputs are consistent with Human Preferences and ethical Considerations.
+- When interacting with a Foundation Model, a Prompt is the Input Practitioners provide to the Model to generate a Response or Output. Essentially, Prompts act as Instructions guiding the Model on what to perform.
+- The Quality and Structure of the Prompt significantly influence the Foundation Model's Performance on specific Tasks. This is where _Prompt Engineering_ plays a crucial Role.
+- _Prompt Engineering_ is a ciritcal Field that focused on optimizing the Design, Development, and Interaction with Language Models, especially large Models. Core Aspects of _Prompt Engineering_ incldue:
+  - Enhancing the Capabilities of Language Models.
+  - Addressing and mitigating their Limitations.
+  - Gaining deeper Insights into how Models function.
+- _Prompt Engineering_ provides Strategies and Techniques to push the Boundaries of Language Models' Performance. It aims to:
+- **Designing Effective Prompts**: Create Prompts that precisely convey the Task to the Model.
+- **Optimizing Interactions**: Refine Prompts to improve Model Performance for specific Tasks.
+- **Understanding Model Behavior**: Gain Insights into how Models interpret and respond to Prompts, which can further inform Development and Application of these Technologies.
+- **Aligning Model Outputs with Human Values**: Use Reinforcement Learning Techniques, like Reinforcement Learning from Human Feedback (RLHF), to ensure that Model Outputs align with Human Preferences and ethical Standards.
 
 ### Difference Between Prompt Engineering and Fine-Tuning
 
-- In Fine-Tuning, the Weights or Parameters of the Model are adjusted using Training Data with the Goal of Optimizing a Cost Function. Fine-Tuning can be an expensive Process, both in Terms of Computation Time and actual Cost.
-- _Prompt Engineering_ attempts to guide the trained Foundation Model, an LLM, or a Text-to-Image Model, to give more relevant and accurate Answers.
-- Integration with RLHF: Unlike traditional Fine-Zuning, which focuses solely on adjusting Model Parameters, Prompt Engineering combined with RLHF involves optimizing how Prompts interact with pre-trained Models and using Human Feedback to shape the Model's Responses in a Way that aligns with Human Values and Expectations.
+- Fine-tuning modifies the Model’s Weights or Parameters using Training Data to optimize a Cost Function. While effective, Fine-tuning is computationally expensive and time-consuming.
+- _Prompt Engineering_, in Contrast, involves crafting Inputs to guide pre-trained Models (such as Large Language Models or Text-to-image Models) to deliver accurate and relevant Responses.
+- _Prompt Engineering_, when integrated with RLHF, focuses on optimizing the Interaction between Prompts and Models, using Human Feedback to shape the Model’s Responses in Ways aligned with Human Values and Expectations.
 
 ### Benefits of Prompt Engineering
 
-- _Prompt Engineering_ is the fastest Way to harness the Power of LLMs. By interacting with an LLM through a Series of Questions, Statements, or Instructions, the Practitioner can adjust LLM Output Behavior based on the specific Context of the Output they want to achieve.
-- Effective Prompt Techniques can help Businesses accomplish the following Benefits:
-  - **Boost a Model's Abilities and improve Safety**: Enhance the Performance and Reliability of the Model's Outputs. Techniques such as RLHF can significantly enhance Safety by ensuring that the Outputs are aligned with ethical Standards.
-  - **Augment the Model with Domain Knowledge and external Tools**: Incorporate additional Information and Tools without changing Model Parameters or Fine-Zuning.
-- **Interact with Language Models to grasp their full Capabilities**: Explore and utilize the Model's full Range of Functionalities. RLHF allows for more nuanced Interactions by Refining how the Model interprets and responds to complex or sensitive Prompts.
-- **Achieve better quality Outputs through better quality Inputs**: Ensure higher Accuracy and Relevance in the generated Outputs by optimizing the Inputs. Techniques like RLHF contribute to this by fine-tuning the Model’s Responses based on Human Feedback.
+- _Prompt Engineering_ is the fastest and most cost-effective Way to leverage Large Language Models (LLMs). By engaging with an LLM through well-crafted Questions, Statements, or Instructions, Practitioners can fine-tune Outputs to meet specific Needs.
+- Effective Prompt Techniques provice Businesses with several Benefits:
+  - **Boost a Model's Performance and Safety**: Techniques like RLHF enhance Model Output Quality and ensure Alignment with ethical Standards.
+  - **Integrate Domain Knowledge and external Tools**: Augment the Model’s Performance without requiring Fine-tuning by incorporating additional Tools and external Data into Prompts.
+- **Harness the full Capabilities of Language Models**: Explore and utilize Models’ wide Range of Functionalities. RLHF refines Model Interactions, enabling better handling of complex or sensitive Prompts.
+- **Achieve better Output through better Input**: Higher-quality Prompts lead to more accurate and relevant Outputs. RLHF further enhances this by refining Model Responses based on Human Feedback.
 
 ### Elements of a Prompt
 
-- The Form of a Prompt depends on the Task that the Practitioner gives a Model.
-- As Practitioners explore Examples of Prompt Design, they will see Prompts that contain some or all of the following Elements:
-  - **Instructions**: This is a Task for the LLM to do. It provides a Task Description or Instruction for how the Model should perform.
-  - **Context**: This is external Information to guide the Model.
-  - **Input Data**: This is the Input for which the Practitioner want a Response.
-  - **Output Indicator**: This is the Output Type or Format.
+- The Form of a Prompt varies depending on the Task Practitioners assign to the Model.
+- Examples of Prompt Design may include the following Elements:
+  - **Instructions**: Describe the Task or Directive for the Model to perform.
+  - **Context**: Supply additional Information that helps the Model generate a more accurate Response.
+  - **Input Data**: Provide the Input for which the Practitioner seeks a Response.
+  - **Output Indicator**: Define the expected Type or Format of the Output.
 
 ### Best Practices for designing effective Prompts
 
-| Recommendation                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Bad Prompt                                                                  | Good Prompt                                                                                                                                                                                          |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Be clear and concise                             | Prompts should be straightforward and avoid Ambiguity. Clear Prompts lead to more coherent Responses. Craft Prompts with natural, flowing Language and coherent Sentence Structure. Avoid isolated Keywords and Phrases.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Compute the Sum Total of the subsequent Sequence of Numerals: 4, 8, 12, 16. | What is the Sum of these Numbers: 4, 8, 12, 16?                                                                                                                                                      |
-| Include Context if needed                        | Provide any additional Context that would help the Model respond accurately. For Example, if the Practitioner ask a Model to analyze a Business, include Information about the Type of Business. What does the Company do? This Type of Detail in the Input provides more relevant Output. The Context the Practitioner provide can be common across multiple Inputs or specific to each Input.                                                                                                                                                                                                                                                                                                                                                                                                                              | Summarize this Article: [insert Article Text]                               | Provide a Summary of this Article to be used in a Blog Post: [insert Article Text]                                                                                                                   |
-| Use Directives for the appropriate Response Type | If hte Practitioner want a particular Output Form, such as a Summary, Question, or Poem, specify the Response Type directly. The Practitioner can also limit Responses by Length, Format, included Information, excluded Information, and more.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | What is the Capital?                                                        | What is the Capital of New York? Provide the Answer in a full Sentence.                                                                                                                              |
-| Consider the Output in the Prompt                | Mention the requested Output at the End of the prompt to keep the Model focused on appropriate Content.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Calculate the Area of a Circle.                                             | Calculate the Area of a Circle with a Radius of 3 Inches (7.5 cm). Round your answer to the nearest Integer.                                                                                         |
-| Start Prompts with an Interrogation              | Phrase your Input as a Question, beginning with Words, such as who, what, where, when, why, and how.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Summarize this Event.                                                       | Why did this Event happen? Explain in three Sentences.                                                                                                                                               |
-| Provide an Example Response                      | Use the expected Output Format as an Example Response in the Prompt. Surround it in Brackets to make it clear that it is an Example.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Determine the Sentiment of this Social Media Post: [insert Post]            | Determine the Sentiment of the following Social Media Post using these Examples: post: "great Pen" => Positive; post: "I hate when my phone Battery dies" => Negative; [insert Social Media Post] => |
-| Break up complex Tasks                           | Foundation Models can get confused when asked to perform complex Tasks. Break up complex Tasks by using the following Techniques: Divide the Task into several Subtasks. If the Practitioner can not get reliable Results, try splitting the Task into multiple Prompts. Ask the Model if it understood the Instruction. Provide Clarification based on the Model's Response. If the Practitioners do not know how to break the Task into Subtasks, ask the Model to think Step by Step. This Method might not work for all Models, but the Practitioners can try to rephrase the Instructions in a Way that makes Sense for the Task. For Example, the Practitioners might request that the Model divides the Task into Subtasks, approaches the Problem systematically, or reasons through the Problem one Step at a Time. | -                                                                           | -                                                                                                                                                                                                    |
-| Experiment and be creative                       | Try different Prompts to optimize the Model's Responses. Determine which Prompts achieve effective Results and which Prompts achieve inaccurate Results. Novel and thought-provoking Prompts can lead to innovative Outcomes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | -                                                                           | -                                                                                                                                                                                                    |
+| Recommendation                                   | Description                                                                                                                                                                                                   | Bad Prompt                                               | Good Prompt                                                                                                                                                                |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Be clear and concise                             | Prompts should be straightforward, avoiding Ambiguity. Clear, natural Language leads to more coherent Responses.                                                                                              | Compute the Sum of the following Sequence: 4, 8, 12, 16. | What is the Sum of these Numbers: 4, 8, 12, 16?                                                                                                                            |
+| Include Context if needed                        | Provide relevant Background Information to guide the Model’s Response. The Context may vary depending on the Input or be consistent across multiple Inputs.                                                   | Summarize this Article: [insert Text]                    | Provide a Summary of this Article to be used in a Blog Post: [insert Text]                                                                                                 |
+| Use Directives for the appropriate Response Type | Specify the desired Response Type and Format, such as a Summary, Question, or structured Format. Limit Responses if necessary.                                                                                | What is the Capital?                                     | What is the Capital of New York? Provide the Answer in a full Sentence.                                                                                                    |
+| Consider the Output in the Prompt                | Specify the expected Output at the End of the Prompt to keep the Model focused on the Task.                                                                                                                   | Calculate the Area of a Circle.                          | Calculate the Area of a Circle with a Radius of 3 Inches (7.5 cm). Round your answer to the nearest Integer.                                                               |
+| Start Prompts with an Interrogation              | Phrase Inputs as Questions, starting with who, what, where, when, why, and how.                                                                                                                               | Summarize this Event.                                    | Why did this Event happen? Explain in three Sentences.                                                                                                                     |
+| Provide an Example Response                      | Supply an Example of the desired Output Format in the Prompt, enclosed in Brackets, to guide the Model.                                                                                                       | Determine the Sentiment of this Post: [insert Text]      | Determine the Sentiment of the following Post using these Examples: post: "great Pen" => Positive; post: "I hate when my phone Battery dies" => Negative; [insert Text] => |
+| Break up complex Tasks                           | For complex Tasks, break them down into Subtasks to avoid confusing the Model. Ask the Model to confirm its Understanding before proceeding with each Step. If needed, prompt the Model to work Step-by-Step. | -                                                        | -                                                                                                                                                                          |
+| Experiment and be creative                       | Try different Variations of Prompts to determine which ones yield the best Results.                                                                                                                           | -                                                        | -                                                                                                                                                                          |
 
 ### Advanced Prompt Engineering Techniques
 
-- When crafting and manipulating Prompts, there are certain Techniques that Practitioners can use to achieve the Response they want from Models.
-- These Techniques can be significantly enhanced through the Integration of RLHF, which leverages Human Feedback to further refine and align Model Outputs with desired Outcomes.
+- When refining Prompts, several advanced Techniques can be employed to achieve specific Outcomes. These Techniques become even more powerful when combined with RLHF to align Model Outputs with Human Goals.
 
 #### Zero-Shot Prompting
 
-- Zero-shot Prompting is a Technique where a Practitioner presents a Task to an LLM without giving the Model further Examples. Here, the Practitioner expects the Model to perform the Task without a prior Understanding, or Shot, of the Task.
-- Modern LLMs demonstrate remarkable Zero-shot Performance.
+- Zero-shot Prompting asks the Model to complete a Task without Examples. Despite not providing prior Examples, LLMs can often perform remarkably well.
+
+##### Tips for Zero-Shot Prompting
+
+- Larger LLMs are more likely to produce effective Zero-shot Responses.
+- Instruction Tuning and RLHF can improve Zero-shot Performance by scaling Instruction tuning and aligning Responses with Human Preferences.
+
 - Example Prompt:
 
 ```
@@ -73,8 +77,13 @@ Explain the importance of biodiversity in ecosystems.
 
 #### Few-Shot Prompting
 
-- Few-shot Prompting is a Technique where the Practitioner give the Model contextual Information about the requested Tasks. In this Technique, Examples of both the Task and the Output are provided.
-- Providing this Context, or a Few Shots, in the Prompt conditions the Model to follow the Task guidance closely.
+- Few-shot Prompting supplies Examples of Tasks and their Outputs, helping the Model follow Task Instructions more closely.
+
+##### Tips for Few-Shot Prompting
+
+- Labels in few-shot Prompts do not need to be accurate for better Performance, but providing a Range of Examples improves the Model’s Contextual Understanding.
+- Dynamic Adaptation: If Practitioners have many Examples, they should dynamically adjust the Number of Tokens used within Model Limits, refining the Prompt with RLHF Feedback.
+
 - Example Prompt:
 
 ```
@@ -83,16 +92,14 @@ Translate the following sentences into French:
 2. The weather is sunny today.
 ```
 
-##### Tips for Few-Shot Prompting
-
-- The Labels in a Few-shot Prompt do not need to be correct to improve Model Performance. Applying random Labels often outperforms using no Labels at all. However, the Label Space and Distribution of the Input Text specified by the Demonstrations are important.
-- **Dynamic Adaptation**: If the Practitioners have Access to a large Set of Examples, they should use Techniques to obey the Token Limits of the Model and dynamically populate Prompt Templates. RLHF can enhance this by fine-tuning the Model’s Understanding of these Prompts based on human-provided Feedback.
-
 #### Chain-of-Thought Prompting
 
-- Chain-of-Thought (CoT) Prompting breaks down complex Reasoning Tasks through intermediary Reasoning Steps.
-- Practitioners can use both Zero-shot and Few-shot Prompting Techniques with CoT Prompts.
-- Practitioners can use the Phrase "Think Step by Step" to invoke CoT Reasoning from the Model.
+- Chain-of-Thought (CoT) Prompting encourages the Model to break down complex Tasks into intermediate Reasoning Steps.
+
+##### Tips for Chain-of-Thought Prompting Prompting
+
+- CoT Prompting works well for Tasks that involve multiple Reasoning Steps. Practitioners can use RLHF to ensure Reasoning aligns with Human Expectations.
+
 - Example Prompt:
 
 ```
@@ -105,51 +112,42 @@ To solve the math problem 24 divided by 6, think step by step.
 
 #### Self-Consistency
 
-- Self-consistency is a Prompting Technique similar to CoT Prompting. However, instead of taking the obvious Step-by-Step or Greedy Path, Self-Consistency Prompts the Model to sample a variety of Reasoning Paths. Then, the Model aggregates the final Answer based on multiple Data Points from the various Paths.
-- Self-consistency improves CoT Reasoning Prompting when used in a Range of common arithmetic and common-sense Reasoning Benchmarks.
-- Using the Self-consistency Technique, the Model can separate the appropriate Data Points and then aggregate them into the correct Answer.
+- Self-consistency builds on CoT by prompting the Model to consider various Reasoning Paths and select the most consistent Answer.
+
+##### Tip for Self-Consistency Prompting
+
+- RLHF can refine Self-consistency Prompting by weighting Reasoning Paths based on Human Feedback, leading to more accurate Results.
+
 - Example Prompt:
 
 ```
 Solve the math problem 12 times 15 using different methods and find the most consistent answer.
 ```
 
-##### Tip for Self-Consistency Prompting
+#### Tree of Thoughts (ToT)
 
-- RLHF can be applied to Self-consistency Prompting to refine the Selection and Weighting of Reasoning Paths based on Human Feedback, ensuring that the most accurate and aligned Results are achieved.
+- ToT builds on CoT by sampling multiple Reasoning Paths, allowing the Model to evaluate and explore multiple potential Solutions for Tasks that require non-linear Decision-making.
 
-#### Tree of Thoughts
-
-- Tree of Thoughts (ToT) is Technique that builds on the CoT Prompting Technique. CoT Prompting samples Thoughts sequentially, but ToT Prompting follows a Tree-branching Technique.
-- With the ToT Technique, the LLM can learn in a nuanced Way, considering multiple Paths instead of one sequential Path.
-- ToT Prompting is an especially effective Method for Tasks that involve important initial Decisions, Strategies for the Future, and Exploration of multiple Solutions.
-- Most LLMs make Decisions by following a standard Left-to-Right Token-Level Inference, but with ToT, LLMs can self-evaluate Choices.
-- ToT significantly improves Performance on Tasks that require nontrivial Planning.
 - Example Prompt:
 
 ```
 Outline a business plan for a new tech startup considering multiple strategies and choose the best approach.
 ```
 
-#### Retrieval Augmented Generation
+#### Retrieval Augmented Generation (RAG)
 
-- Retrieval Augmented Generation (RAG) is a Prompting Technique that supplies domain-relevant Data as Context to produce Responses based on that Data and the Prompt.
-- RAG is similar to Fine-tuning. However, rather than having to fine-tune an FM with a small Set of labeled Examples, RAG retrieves a small Set of relevant Documents from a large Corpus and uses that to provide Context to answer the Question.
-- RAG will not change the Weights of the FM whereas Fine-tuning will. This Approach can be more cost-efficient than regular Fine-tuning because the RAG approach does not incur the Cost of fine-tuning a Model.
-- RAG also addresses the Challenge of frequent Data Changes because it retrieves updated and relevant Information instead of relying on potentially outdated Sets of Data.
-- In RAG, the external Data can come from multiple Data Sources, such as a Document Repository, Databases, or APIs, but before it can be used within LLMs, the Data must be prepared and kept currrent.
+- RAG adds domain-relevant Data into the Prompt’s Context without changing the Model’s Parameters, which can be more efficient than Fine-tuning. This Technique is especially useful when handling Tasks with frequently updated Data.
+
 - Example Prompt:
 
 ```
 Using the latest research papers on climate change, explain the impact of global warming on polar ice caps.
 ```
 
-#### Automatic Reasoning and Tool-Use
+#### Automatic Reasoning and Tool-Use (ART)
 
-- Like the Self-consistency and ToT Prompt Techniques, ART is a Prompting Technique that builds on the CoT Process.
-- ART is used specifically for multi-step Reasoning Tasks. This Technique essentially deconstructs complex Tasks by having the Model select Demonstrations of multiple, or few-shot, Examples from the Task Library. At the same Time, the Model is using this Few-shot Breakdown, it uses predefined external Tools such as Search and Code Generation to carry out the Task.
-- ART performs substantially better than Few-shot Prompting and automatic CoT for unseen Tasks and matches the Performance of handcrafted CoT Prompts on a majority of Tasks.
-- ART also makes it more efficient for Humans to update Information in the Task Libraries, which can correct Errors and ultimately improve Performance.
+- ART applies multi-step Reasoning combined with external Tools, significantly improving the Model’s Performance on complex, unseen Tasks.
+
 - Example Prompt:
 
 ```
@@ -158,9 +156,8 @@ Using a database of economic indicators and code generation tools, analyze the e
 
 #### ReAct Prompting
 
-- With ReAct Prompting, an LLM can combine Reasoning and Action. Models are often used for Reasoning or for Acting, but they are not always effectively used for both at the same Time.
-- CoT Prompting shows Promise for an LLM to reason and generate Actions for straightforward Tasks, like Mathematics. However, the Inability to update Information or access external Contexts with CoT Prompting can lead to Errors in the Output, such as Fact Hallucination.
-- With a ReAct Framework, LLMs can generate both Reasoning Traces and Task-specific Actions that are based on external Tools, such as Wikipedia Pages or SQL Databases. This external Context leads to more accurate and reliable Output.
+- ReAct Prompting enables the Model to perform both Reasoning and Actions. By using external Data Sources (e.g., Wikipedia, Databases), ReAct improves Accuracy, reducing Hallucination in Outputs.
+
 - Example Prompt:
 
 ```
