@@ -53,114 +53,122 @@
 
 ### Advanced Prompt Engineering Techniques
 
-- When refining Prompts, several advanced Techniques can be employed to achieve specific Outcomes. These Techniques become even more powerful when combined with RLHF to align Model Outputs with Human Goals.
+- When refining Prompts, several advanced Techniques can be employed to achieve specific Outcomes. These Techniques become even more powerful when combined with RLHF, which helps align Model Outputs with Human Goals and Preferences.
 
 #### Zero-Shot Prompting
 
-- Zero-shot Prompting asks the Model to complete a Task without Examples. Despite not providing prior Examples, LLMs can often perform remarkably well.
+- Zero-shot Prompting is a Technique where a Model is asked to complete a Task without providing prior Examples or Context. The Practitioner expects the Model to perform the Task based solely on its internal Understanding. Despite the Lack of prior exposure to the Task, modern LLMs can often perform remarkably well.
 
 ##### Tips for Zero-Shot Prompting
 
-- Larger LLMs are more likely to produce effective Zero-shot Responses.
-- Instruction Tuning and RLHF can improve Zero-shot Performance by scaling Instruction tuning and aligning Responses with Human Preferences.
+- **Model Size**: Larger LLMs are more likely to produce effective Zero-shot Responses due to their broader contextual Understanding.
+- **Instruction Tuning & RLHF**: Instruction tuning can improve Zero-shot Learning by helping the Model adapt to a wider variety of Tasks. RLHF can be used to scale Instruction Tuning and align the Model's Responses with Human Values, ensuring that it both understands the Task and meets Expectations.
+- **Example Prompt**:
 
-- Example Prompt:
-
-```
+```text
 Explain the importance of biodiversity in ecosystems.
 ```
 
-##### Tips for Zero-Shot Prompting
-
-- The larger the LLM, the more likely the Zero-shot Prompt will yield effective Results.
-- **Instruction Tuning and RLHF**: Instruction Tuning can improve Zero-shot Learning. To better adapt LLMs to Human Preferences, RLHF can be used to scale Instruction Tuning, ensuring that the Model not only understands the Task but also aligns its Responses with Human Values.
-
 #### Few-Shot Prompting
 
-- Few-shot Prompting supplies Examples of Tasks and their Outputs, helping the Model follow Task Instructions more closely.
+- Few-shot Prompting provides Examples of Tasks along with their expected Outputs. These Examples, or "Shots," help the Model better understand the Task's Context and generate more accurate Responses.
 
 ##### Tips for Few-Shot Prompting
 
-- Labels in few-shot Prompts do not need to be accurate for better Performance, but providing a Range of Examples improves the Model’s Contextual Understanding.
-- Dynamic Adaptation: If Practitioners have many Examples, they should dynamically adjust the Number of Tokens used within Model Limits, refining the Prompt with RLHF Feedback.
+- **Label Accuracy**: Labels in Few-shot Prompts do not need to be perfectly accurate to improve Performance. Interestingly, random Labels can sometimes outperform using no Labels.
+- **Range of Examples**: Providing a diverse Range of Examples improves the Model’s Contextual Understanding.
+- **Label Space and Input Distribution**: Ensuring a diverse Label Space and distributing Input Text properly enhances the Model's Ability to generalize.
+- **Dynamic Adaptation**: If the Practitioner has many Examples, they should dynamically adjust the Number of Tokens used within the Model's Limits. This can be refined further with RLHF, allowing Human Feedback to fine-tune Prompts based on contextual Understanding.
+- **Example Prompt**:
 
-- Example Prompt:
-
-```
+```text
 Translate the following sentences into French:
 1. The cat is on the roof.
 2. The weather is sunny today.
 ```
 
-#### Chain-of-Thought Prompting
+#### Chain-of-Thought (CoT) Prompting
 
-- Chain-of-Thought (CoT) Prompting encourages the Model to break down complex Tasks into intermediate Reasoning Steps.
+- Chain-of-Thought Prompting breaks down complex Tasks into intermediate Reasoning Steps, guiding the Model through a Sequence of logical Operations to reach the correct Conclusion. CoT Prompting can be used in Combination with both Zero-shot and Few-shot Prompting.
 
-##### Tips for Chain-of-Thought Prompting Prompting
+##### Tips for Chain-of-Thought Prompting
 
-- CoT Prompting works well for Tasks that involve multiple Reasoning Steps. Practitioners can use RLHF to ensure Reasoning aligns with Human Expectations.
+- **Multi-step Tasks**: CoT Prompting works particularly well for Tasks that involve multiple Reasoning Steps or require a Breakdown of the Thought Process.
+- **“Think Step by Step”**: A simple Phrase like "Think step by step" can invoke CoT Reasoning from the Model, encouraging it to break the Task into smaller Steps.
+- **RLHF**: RLHF can be integrated to ensure the Model’s Reasoning aligns with Human Expectations at each Step, enhancing Coherence and Accuracy.
+- **Example Prompt**:
 
-- Example Prompt:
-
-```
+```text
 To solve the math problem 24 divided by 6, think step by step.
 ```
 
-##### Tip for Chain-of-Thought Prompting
-
-- Use CoT Prompting when the Task involves several Steps or requires a Series of Reasoning. RLHF can be integrated to ensure the Model's Reasoning aligns with Human Expectations at each Step.
-
 #### Self-Consistency
 
-- Self-consistency builds on CoT by prompting the Model to consider various Reasoning Paths and select the most consistent Answer.
+- Self-Consistency builds on CoT by prompting the Model to sample multiple Reasoning Paths before aggregating the final Answer. Rather than following a single Path, the Model explores various Approaches and selects the most consistent Answer.
 
 ##### Tip for Self-Consistency Prompting
 
-- RLHF can refine Self-consistency Prompting by weighting Reasoning Paths based on Human Feedback, leading to more accurate Results.
+- **Path Exploration**: Encourage the Model to explore different Ways of solving a Task. Self-Consistency prompts the Model to look at multiple Reasoning Paths and evaluate them based on their Consistency.
+- **RLHF**: RLHF can be applied to refine the Selection and Weighting of Reasoning Paths based on Human Feedback, leading to more accurate and reliable Results.
+- **Example Prompt**:
 
-- Example Prompt:
-
-```
+```text
 Solve the math problem 12 times 15 using different methods and find the most consistent answer.
 ```
 
 #### Tree of Thoughts (ToT)
 
-- ToT builds on CoT by sampling multiple Reasoning Paths, allowing the Model to evaluate and explore multiple potential Solutions for Tasks that require non-linear Decision-making.
+- Tree of Thoughts (ToT) is an Extension of CoT Prompting. While CoT typically follows a sequential Path of Reasoning, ToT allows the Model to explore multiple Branching Paths simultaneously, leading to a more comprehensive Solution.
 
-- Example Prompt:
+##### Tip for Tree of Thoughts
 
-```
+- **Non-linear Tasks**: ToT is particularly useful for Tasks requiring non-linear Decision-making, such as Planning, Strategy, or Problem-solving that requires multiple potential Solutions.
+- **Tree-Branching Technique**: The Model can self-evaluate Choices and explore multiple Paths at each Decision Point, improving Performance on Tasks that require complex Reasoning and Planning.
+- **Example Prompt**:
+
+```text
 Outline a business plan for a new tech startup considering multiple strategies and choose the best approach.
 ```
 
 #### Retrieval Augmented Generation (RAG)
 
-- RAG adds domain-relevant Data into the Prompt’s Context without changing the Model’s Parameters, which can be more efficient than Fine-tuning. This Technique is especially useful when handling Tasks with frequently updated Data.
+- Retrieval Augmented Generation (RAG) is a Technique that injects external domain-relevant Data into the Prompt’s Context without altering the Model's Parameters. RAG retrieves Documents from external Databases, making it especially useful for Tasks requiring up-to-date Information.
 
-- Example Prompt:
+##### Tip for Retrieval Augmented Generation
 
-```
+- **Cost Efficiency**: RAG is more efficient than Fine-tuning because it does not change the Model’s Weights. This makes it a cost-effective Solution for Tasks that require frequent Updates.
+- **Keeping Data Current**: RAG works well when the external Data is regularly updated. It's crucial to ensure that external Documents, Databases, or APIs are properly maintained to avoid outdated Information.
+- **Example Prompt**:
+
+```text
 Using the latest research papers on climate change, explain the impact of global warming on polar ice caps.
 ```
 
 #### Automatic Reasoning and Tool-Use (ART)
 
-- ART applies multi-step Reasoning combined with external Tools, significantly improving the Model’s Performance on complex, unseen Tasks.
+- Automatic Reasoning and Tool-Use (ART) is a Prompting Technique that combines multi-step Reasoning with the Use of external Tools, such as Search Engines or Code Generators. This Technique is highly effective for complex, unseen Tasks, often outperforming traditional Few-shot and automatic CoT Prompting.
 
-- Example Prompt:
+##### Tip for Automatic Reasoning and Tool-Use
 
-```
+- **Tool Integration**: ART allows the Model to integrate external Tools and Databases, making it highly efficient for Tasks requiring both Reasoning and access to external Information.
+- **Performance on unseen Tasks**: ART significantly improves Performance on Tasks that the Model has not seen before, and it can match the Effectiveness of handcrafted CoT Prompts.
+- **Example Prompt**:
+
+```text
 Using a database of economic indicators and code generation tools, analyze the economic impact of a new tax policy.
 ```
 
 #### ReAct Prompting
 
-- ReAct Prompting enables the Model to perform both Reasoning and Actions. By using external Data Sources (e.g., Wikipedia, Databases), ReAct improves Accuracy, reducing Hallucination in Outputs.
+- ReAct Prompting enables Models to perform both Reasoning and Actions simultaneously. By accessing external Data Sources, such as Databases or APIs, the Model can enhance Accuracy and reduce Hallucination in Outputs. This Approach is especially useful for Tasks requiring both critical Thinking and Access to real-world Information.
 
-- Example Prompt:
+##### Tip for ReAct Prompting
 
-```
+- **Reasoning + Action**: ReAct allows the Model to generate Reasoning Traces and execute specific Actions based on external Data. This reduces fact Hallucination and ensures that the Model’s Reasoning is grounded in real-world Information.
+- **Combining Tools**: ReAct excels when used with external Sources like Wikipedia or SQL Databases, making it ideal for fact-heavy Tasks that require both Reasoning and Fact Retrieval.
+- **Example Prompt**:
+
+```text
 Research the latest advancements in AI, summarize key points, and generate an action plan for integrating these advancements into our company.
 ```
 
