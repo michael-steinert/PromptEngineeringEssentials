@@ -248,9 +248,9 @@ Please translate the following text from English to French, ensuring that any pr
   <img src="images/mitigating_bias.png" alt="Mitigating Bias" width="45%"/>
 </P>
 
-- The following three Techniques can help mitigate Bias in Foundation Models:
+- The following three Techniques can help mitigate Bias in Foundation Models: update the Prompt, enhance the Dataset and use Training Techniques.
 
-##### Update the Prompt
+#### Update the Prompt
 
 - Providing explicit Guidance in Prompts can reduce inadvertent Performance at Scale. There are a few Methods for mitigating Bias in a Model's Output through Prompt updates:
 - **Text-to-Image Disambiguation (TIED) Framework**: This Method focuses on avoiding Ambiguity in Prompts by asking Clarifying Questions to understand the User's Intent and avoid Ambiguous, and possibly biased, Answers.
