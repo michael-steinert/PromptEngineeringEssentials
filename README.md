@@ -23,9 +23,9 @@
 ### Considerations before fine-tuning a Model
 
 - Before deciding to fine-tune a Large Language Model, clarify the Objectives and ensure that the necessary Resources and Evaluation Strategies are in Place. The following Information should be considered:
-  - Establish a clear Evaluation Strategy or Metric for Assessing the Model's Performance on the Target Task.
-  - Attempt Prompt Engineering with a Few-shot Approach before proceeding to fine-tune the Model.
-  - Secure a high-quality, labeled Dataset that aligns with the specific Requirements of the Target Task.
+  1. Establish a clear Evaluation Strategy or Metric for Assessing the Model's Performance on the Target Task.
+  2. Attempt Prompt Engineering with a Few-shot Approach before proceeding to fine-tune the Model.
+  3. Secure a high-quality, labeled Dataset that aligns with the specific Requirements of the Target Task.
 
 ### Benefits of Prompt Engineering
 
