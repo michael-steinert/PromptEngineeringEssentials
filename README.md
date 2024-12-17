@@ -16,17 +16,24 @@
 
 ### Difference Between Prompt Engineering and Fine-Tuning
 
-- Fine-tuning modifies the Model’s Weights or Parameters using Training Data to optimize a Cost Function. While effective, Fine-tuning is computationally expensive and time-consuming.
+- Fine-tuning modifies the Model's Weights or Parameters using Training Data to optimize a Cost Function. While effective, Fine-tuning is computationally expensive and time-consuming.
 - _Prompt Engineering_, in Contrast, involves crafting Inputs to guide pre-trained Models (such as Large Language Models or Text-to-image Models) to deliver accurate and relevant Responses.
-- _Prompt Engineering_, when integrated with RLHF, focuses on optimizing the Interaction between Prompts and Models, using Human Feedback to shape the Model’s Responses in Ways aligned with Human Values and Expectations.
+- _Prompt Engineering_, when integrated with RLHF, focuses on optimizing the Interaction between Prompts and Models, using Human Feedback to shape the Model's Responses in Ways aligned with Human Values and Expectations.
+
+### Considerations before fine-tuning a Model
+
+- Before deciding to fine-tune a Large Language Model, clarify the Objectives and ensure that the necessary Resources and Evaluation Strategies are in Place. The following Information should be considered:
+  - Establish a clear Evaluation Strategy or Metric for Assessing the Model's Performance on the Target Task.
+  - Attempt Prompt Engineering with a Few-shot Approach before proceeding to fine-tune the Model.
+  - Secure a high-quality, labeled Dataset that aligns with the specific Requirements of the Target Task.
 
 ### Benefits of Prompt Engineering
 
 - _Prompt Engineering_ is the fastest and most cost-effective Way to leverage Large Language Models (LLMs). By engaging with an LLM through well-crafted Questions, Statements, or Instructions, Practitioners can fine-tune Outputs to meet specific Needs.
 - Effective Prompt Techniques provide Businesses with several Benefits:
   - **Boost a Model's Performance and Safety**: Techniques like RLHF enhance Model Output Quality and ensure Alignment with ethical Standards.
-  - **Integrate Domain Knowledge and external Tools**: Augment the Model’s Performance without requiring Fine-tuning by incorporating additional Tools and external Data into Prompts.
-- **Harness the full Capabilities of Language Models**: Explore and utilize Models’ wide Range of Functionalities. RLHF refines Model Interactions, enabling better handling of complex or sensitive Prompts.
+  - **Integrate Domain Knowledge and external Tools**: Augment the Model's Performance without requiring Fine-tuning by incorporating additional Tools and external Data into Prompts.
+- **Harness the full Capabilities of Language Models**: Explore and utilize Models' wide Range of Functionalities. RLHF refines Model Interactions, enabling better handling of complex or sensitive Prompts.
 - **Achieve better Output through better Input**: Higher-quality Prompts lead to more accurate and relevant Outputs. RLHF further enhances this by refining Model Responses based on Human Feedback.
 
 ### Elements of a Prompt
@@ -43,7 +50,7 @@
 | Recommendation                                   | Description                                                                                                                                                                                                   | Bad Prompt                                               | Good Prompt                                                                                                                                                                |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Be clear and concise                             | Prompts should be straightforward, avoiding Ambiguity. Clear, natural Language leads to more coherent Responses.                                                                                              | Compute the Sum of the following Sequence: 4, 8, 12, 16. | What is the Sum of these Numbers: 4, 8, 12, 16?                                                                                                                            |
-| Include Context if needed                        | Provide relevant Background Information to guide the Model’s Response. The Context may vary depending on the Input or be consistent across multiple Inputs.                                                   | Summarize this Article: [insert Text]                    | Provide a Summary of this Article to be used in a Blog Post: [insert Text]                                                                                                 |
+| Include Context if needed                        | Provide relevant Background Information to guide the Model's Response. The Context may vary depending on the Input or be consistent across multiple Inputs.                                                   | Summarize this Article: [insert Text]                    | Provide a Summary of this Article to be used in a Blog Post: [insert Text]                                                                                                 |
 | Use Directives for the appropriate Response Type | Specify the desired Response Type and Format, such as a Summary, Question, or structured Format. Limit Responses if necessary.                                                                                | What is the Capital?                                     | What is the Capital of New York? Provide the Answer in a full Sentence.                                                                                                    |
 | Consider the Output in the Prompt                | Specify the expected Output at the End of the Prompt to keep the Model focused on the Task.                                                                                                                   | Calculate the Area of a Circle.                          | Calculate the Area of a Circle with a Radius of 3 Inches (7.5 cm). Round your answer to the nearest Integer.                                                               |
 | Start Prompts with an Interrogation              | Phrase Inputs as Questions, starting with who, what, where, when, why, and how.                                                                                                                               | Summarize this Event.                                    | Why did this Event happen? Explain in three Sentences.                                                                                                                     |
@@ -76,7 +83,7 @@ Explain the importance of biodiversity in ecosystems.
 ##### Tips for Few-Shot Prompting
 
 - **Label Accuracy**: Labels in Few-shot Prompts do not need to be perfectly accurate to improve Performance. Interestingly, random Labels can sometimes outperform using no Labels.
-- **Range of Examples**: Providing a diverse Range of Examples improves the Model’s Contextual Understanding.
+- **Range of Examples**: Providing a diverse Range of Examples improves the Model's Contextual Understanding.
 - **Label Space and Input Distribution**: Ensuring a diverse Label Space and distributing Input Text properly enhances the Model's Ability to generalize.
 - **Dynamic Adaptation**: If the Practitioner has many Examples, they should dynamically adjust the Number of Tokens used within the Model's Limits. This can be refined further with RLHF, allowing Human Feedback to fine-tune Prompts based on contextual Understanding.
 - **Example Prompt**:
@@ -95,7 +102,7 @@ Translate the following sentences into French:
 
 - **Multi-step Tasks**: CoT Prompting works particularly well for Tasks that involve multiple Reasoning Steps or require a Breakdown of the Thought Process.
 - **“Think Step by Step”**: A simple Phrase like "Think step by step" can invoke CoT Reasoning from the Model, encouraging it to break the Task into smaller Steps.
-- **RLHF**: RLHF can be integrated to ensure the Model’s Reasoning aligns with Human Expectations at each Step, enhancing Coherence and Accuracy.
+- **RLHF**: RLHF can be integrated to ensure the Model's Reasoning aligns with Human Expectations at each Step, enhancing Coherence and Accuracy.
 - **Example Prompt**:
 
 ```text
@@ -132,11 +139,11 @@ Outline a business plan for a new tech startup considering multiple strategies a
 
 #### Retrieval Augmented Generation (RAG)
 
-- Retrieval Augmented Generation (RAG) is a Technique that injects external domain-relevant Data into the Prompt’s Context without altering the Model's Parameters. RAG retrieves Documents from external Databases, making it especially useful for Tasks requiring up-to-date Information.
+- Retrieval Augmented Generation (RAG) is a Technique that injects external domain-relevant Data into the Prompt's Context without altering the Model's Parameters. RAG retrieves Documents from external Databases, making it especially useful for Tasks requiring up-to-date Information.
 
 ##### Tip for Retrieval Augmented Generation
 
-- **Cost Efficiency**: RAG is more efficient than Fine-tuning because it does not change the Model’s Weights. This makes it a cost-effective Solution for Tasks that require frequent Updates.
+- **Cost Efficiency**: RAG is more efficient than Fine-tuning because it does not change the Model's Weights. This makes it a cost-effective Solution for Tasks that require frequent Updates.
 - **Keeping Data Current**: RAG works well when the external Data is regularly updated. It's crucial to ensure that external Documents, Databases, or APIs are properly maintained to avoid outdated Information.
 - **Example Prompt**:
 
@@ -164,7 +171,7 @@ Using a database of economic indicators and code generation tools, analyze the e
 
 ##### Tip for ReAct Prompting
 
-- **Reasoning + Action**: ReAct allows the Model to generate Reasoning Traces and execute specific Actions based on external Data. This reduces fact Hallucination and ensures that the Model’s Reasoning is grounded in real-world Information.
+- **Reasoning + Action**: ReAct allows the Model to generate Reasoning Traces and execute specific Actions based on external Data. This reduces fact Hallucination and ensures that the Model's Reasoning is grounded in real-world Information.
 - **Combining Tools**: ReAct excels when used with external Sources like Wikipedia or SQL Databases, making it ideal for fact-heavy Tasks that require both Reasoning and Fact Retrieval.
 - **Example Prompt**:
 
@@ -382,10 +389,10 @@ Describe the role of a software developer without assuming gender.
 
 - **Text Classification**: The trained Model is applied to various NLP Tasks, such as Spam Detection, sentiment Analysis, and Topic Categorization, using the Embeddings as the basis for understanding the Input Text.
 - **Named Entity Recognition (NER)**: The Model is used to identify and classify Entities in Text, with contextual Embeddings providing a more accurate Understanding of the Text.
-- **Word Similarity and Analogy Tasks**: The Model’s Ability to recognize and generate semantically similar Words and Phrases is tested and refined.
+- **Word Similarity and Analogy Tasks**: The Model's Ability to recognize and generate semantically similar Words and Phrases is tested and refined.
 - **Question Answering Systems**: The Model is fine-tuned for Tasks that require Understanding and Responding to user Queries, with RLHF helping to ensure the Answers are accurate and appropriate.
 
 6. Model Evaluation and Fine-Tuning
 
 - **Evaluation Metrics**: The Model's Performance is evaluated using Metrics such as Accuracy, Precision, Recall, and F1-score. For specific Tasks like Machine Translation, Metrics like BLEU Score are used.
-- **Fine-Tuning**: Based on the Evaluation, the Model is fine-tuned to improve its Performance on specific Tasks or Datasets. Fine-Tuning can involve supervised Learning with labeled Data or using Techniques like RLHF to adjust the Model’s Behavior based on Human Feedback.
+- **Fine-Tuning**: Based on the Evaluation, the Model is fine-tuned to improve its Performance on specific Tasks or Datasets. Fine-Tuning can involve supervised Learning with labeled Data or using Techniques like RLHF to adjust the Model's Behavior based on Human Feedback.
